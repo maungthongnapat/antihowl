@@ -1,0 +1,20 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 22, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "win-vs2022",
+      "displayName": "Windows - Visual Studio 2022 (x64)",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build"
+    }
+  ],
+  "buildPresets": [
+    { "name": "release", "displayName": "Release", "configurePreset": "win-vs2022", "configuration": "Release" },
+    { "name": "debug",   "displayName": "Debug",   "configurePreset": "win-vs2022", "configuration": "Debug" }
+  ],
+  "testPresets": [
+    { "name": "tests", "displayName": "DSP/AI core tests", "configurePreset": "win-vs2022", "configuration": "Release", "output": { "outputOnFailure": true } }
+  ]
+}
